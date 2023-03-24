@@ -537,6 +537,9 @@ IR.IR_callbackUser(function (message) {
             item.showColor(neopixel.colors(NeoPixelColors.Black))
         }
         if (message == 15) {
+            rojo = 0
+            azul = 0
+            verde = 255
             for (let index = 0; index < 500; index++) {
                 rojo += 1
                 azul += -1
@@ -557,6 +560,9 @@ IR.IR_callbackUser(function (message) {
             }
         }
         if (message == 23) {
+            azul = 0
+            verde = 255
+            rojo = 0
             for (let index = 0; index < 500; index++) {
                 rojo += randint(0, 10)
                 azul += randint(0, 10)
@@ -580,12 +586,15 @@ IR.IR_callbackUser(function (message) {
             }
         }
         if (message == 27) {
+            verde = 255
+            rojo = 0
+            azul = 0
             for (let index = 0; index < 500; index++) {
                 rojo += randint(0, -10)
                 azul += randint(0, 10)
                 item.showColor(neopixel.rgb(rojo, verde, azul))
-                item.rotate(1)
                 basic.pause(1)
+                item.rotate(1)
             }
             for (let index = 0; index < 500; index++) {
                 rojo += randint(0, 10)
@@ -603,22 +612,25 @@ IR.IR_callbackUser(function (message) {
             }
         }
         if (message == 19) {
+            rojo = 0
+            azul = 0
+            verde = 255
             for (let index = 0; index < 500; index++) {
-                rojo += 10
-                azul += -10
+                rojo += 4
+                azul += -1
                 item.showColor(neopixel.rgb(rojo, verde, azul))
                 item.rotate(1)
                 basic.pause(1)
             }
             for (let index = 0; index < 500; index++) {
-                rojo += -10
+                rojo += -1
                 verde += 10
                 item.showColor(neopixel.rgb(rojo, verde, azul))
                 item.rotate(1)
                 basic.pause(1)
             }
             for (let index = 0; index < 500; index++) {
-                verde += -10
+                verde += -2
                 azul += 10
                 item.showColor(neopixel.rgb(rojo, verde, azul))
                 item.rotate(1)
