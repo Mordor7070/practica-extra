@@ -371,10 +371,18 @@ IR.IR_callbackUser(function (message) {
                 `)
         }
         if (mode == 2) {
-        	
+            basic.showIcon(IconNames.Heart)
+            basic.showIcon(IconNames.SmallHeart)
+            basic.showIcon(IconNames.Heart)
         }
         if (mode == 3) {
-        	
+            basic.showIcon(IconNames.Happy)
+            basic.showIcon(IconNames.Sad)
+            basic.showIcon(IconNames.Confused)
+            basic.showIcon(IconNames.Angry)
+            basic.showIcon(IconNames.Asleep)
+            basic.showIcon(IconNames.Surprised)
+            basic.showIcon(IconNames.Silly)
         }
         if (message == 8) {
             cancion += 1
@@ -500,18 +508,6 @@ IR.IR_callbackUser(function (message) {
             music.playTone(349, music.beat(BeatFraction.Half))
             music.playTone(330, music.beat(BeatFraction.Whole))
             music.playTone(330, music.beat(BeatFraction.Whole))
-            music.playTone(294, music.beat(BeatFraction.Half))
-            music.playTone(262, music.beat(BeatFraction.Half))
-            music.playTone(294, music.beat(BeatFraction.Whole))
-            music.playTone(294, music.beat(BeatFraction.Whole))
-            music.playTone(330, music.beat(BeatFraction.Whole))
-            music.playTone(349, music.beat(BeatFraction.Whole))
-            music.playTone(349, music.beat(BeatFraction.Whole))
-            music.playTone(392, music.beat(BeatFraction.Whole))
-            music.playTone(440, music.beat(BeatFraction.Double))
-            music.playTone(349, music.beat(BeatFraction.Half))
-            music.playTone(294, music.beat(BeatFraction.Half))
-            music.playTone(330, music.beat(BeatFraction.Double))
         }
         if (message == 21) {
             item.showColor(neopixel.colors(NeoPixelColors.Red))
@@ -584,10 +580,50 @@ IR.IR_callbackUser(function (message) {
             }
         }
         if (message == 27) {
-        	
+            for (let index = 0; index < 500; index++) {
+                rojo += randint(0, -10)
+                azul += randint(0, 10)
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
+            for (let index = 0; index < 500; index++) {
+                rojo += randint(0, 10)
+                verde += randint(0, -10)
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
+            for (let index = 0; index < 500; index++) {
+                verde += randint(0, 10)
+                azul += randint(0, -10)
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
         }
         if (message == 19) {
-        	
+            for (let index = 0; index < 500; index++) {
+                rojo += 10
+                azul += -10
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
+            for (let index = 0; index < 500; index++) {
+                rojo += -10
+                verde += 10
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
+            for (let index = 0; index < 500; index++) {
+                verde += -10
+                azul += 10
+                item.showColor(neopixel.rgb(rojo, verde, azul))
+                item.rotate(1)
+                basic.pause(1)
+            }
         }
     }
 })
